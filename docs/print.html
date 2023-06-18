@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">2.</strong> User Accounts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local_forensics.html"><strong aria-hidden="true">1.1.1.</strong> Forensic Artifacts</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,6 +165,32 @@
 <p><strong>Configuration management</strong>: What is the current state of the system's configuration? Have any changes been made to the system recently?</p>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recommended-reading"><a class="header" href="#recommended-reading">Recommended Reading</a></h1>
+<p>The following resources provide substansial background on the cyber incident response process. </p>
+<h2 id="cisa-cybersecurity-incident--vulnerability-response-playbooks-1"><a class="header" href="#cisa-cybersecurity-incident--vulnerability-response-playbooks-1">CISA: Cybersecurity Incident &amp; Vulnerability Response Playbooks <sup class="footnote-reference"><a href="#cisa">1</a></sup></a></h2>
+<p>Operational Procedures for Planning and Conducting Cybersecurity Incident and Vulnerability Response Activities in FCEB Information Systems.</p>
+<h3 id="when-to-use-this-playbook"><a class="header" href="#when-to-use-this-playbook">When to use this playbook</a></h3>
+<p>Use this playbook for incidents that involve confirmed malicious cyber activity for which a major incident has been declared or not yet been reasonably ruled out.</p>
+<h2 id="nist-computer-security-incident-handling-guide-2"><a class="header" href="#nist-computer-security-incident-handling-guide-2">NIST: Computer Security Incident Handling Guide <sup class="footnote-reference"><a href="#nist">2</a></sup></a></h2>
+<p>This document has been created for computer security incident response teams (CSIRTs), system and network administrators, security staff, technical support staff, chief information officers (CIOs), computer security program managers, and others who are responsible for preparing for, or responding to, security incidents</p>
+<h2 id="cert-sg-unixlinux-intrusion-detection--3"><a class="header" href="#cert-sg-unixlinux-intrusion-detection--3">CERT SG: UNIX/LINUX Intrusion Detection  <sup class="footnote-reference"><a href="#SG">3</a></sup></a></h2>
+<p>A cheat sheet dedicated to handlers investifating on a precise security issue. </p>
+<h3 id="who-should-use-irm-sheets"><a class="header" href="#who-should-use-irm-sheets">Who should use IRM sheets</a></h3>
+<ul>
+<li>Administrators </li>
+<li>Security Operation Center </li>
+<li>CISOs and deputies </li>
+<li>CERTs </li>
+</ul>
+<div class="footnote-definition" id="cisa"><sup class="footnote-definition-label">1</sup>
+<p>https://www.cisa.gov/sites/default/files/publications/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf</p>
+</div>
+<div class="footnote-definition" id="nist"><sup class="footnote-definition-label">2</sup>
+<p>https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf </p>
+</div>
+<div class="footnote-definition" id="SG"><sup class="footnote-definition-label">3</sup>
+<p>https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="incident-handling-steps"><a class="header" href="#incident-handling-steps">Incident Handling Steps</a></h1>
 <p>The incident response life cycle as defined by NIST Computer Security
 Incident Handling Guide<sup class="footnote-reference"><a href="#nist">1</a></sup> has the following 5 steps:</p>
@@ -174,7 +200,7 @@ Incident Handling Guide<sup class="footnote-reference"><a href="#nist">1</a></su
 <li><strong>Containment, Eradication &amp; Recovery</strong></li>
 <li><strong>Post-Incident Activity</strong></li>
 </ul>
-<p>This playbook may be used to aid in the first two stpes of the life cycle. </p>
+<p>This playbook may be used to aid in the first two steps of the life cycle. </p>
 <h2 id="preparation-phase"><a class="header" href="#preparation-phase">Preparation Phase</a></h2>
 <p>The preparation phase calls for the establishment and training of an incident response team along with acquiring the necessary tools and resources to perform the response activities. 
 This playbook is designed as a training guide for analysts working with Linux OS. </p>
@@ -188,20 +214,19 @@ occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 <div class="footnote-definition" id="SG"><sup class="footnote-definition-label">2</sup>
 <p>https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</p>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="user-accounts"><a class="header" href="#user-accounts">User Accounts</a></h1>
 <p>User accounts are a crucial component of any digital forensics investigation. They provide valuable information about who had access to a system, what they did while logged in, and what resources they may have accessed. </p>
 <p>User accounts can be local to the host or managed centrally using Active Directory, OpenLDAP, Novell eDirectory, etc.</p>
 <p>There are three main types of user accounts on a Linux System:</p>
 <ul>
 <li>
-<p>Superuser account: Also known as the root, this account has full administrative privileges on the system. </p>
+<p><strong>Superuser account</strong>: Also known as the root, this account has full administrative privileges on the system. </p>
 </li>
 <li>
-<p>Regular user account: Regular user accounts have limited access to the system. They may only access files and resources they are explicitly granted access. A regular user can be granted additional privileges by adding the user to a group with the desired privileges or by granting the user specific permissions on specific files or directories. </p>
+<p><strong>Regular user account</strong>: Regular user accounts have limited access to the system. They may only access files and resources they are explicitly granted access. A regular user can be granted additional privileges by adding the user to a group with the desired privileges or by granting the user specific permissions on specific files or directories. </p>
 </li>
 <li>
-<p>System account (Service account): System accounts correspond to a service running on the system rather than to someone using the system. Service accounts are used by system services such as web servers, mail transport agents, databases etc. Note that there is no formal distinction between a regular user account vs. a system/service account at a system level. The key differences are that a regular user account has a login shell and wider privileges. </p>
+<p><strong>System account (Service account)</strong>: System accounts correspond to a service running on the system rather than to someone using the system. Service accounts are used by system services such as web servers, mail transport agents, databases etc. Note that there is no formal distinction between a regular user account vs. a system/service account at a system level. The key differences are that a regular user account has a login shell and wider privileges. </p>
 </li>
 </ul>
 <h2 id="local-user-accounts"><a class="header" href="#local-user-accounts">Local User Accounts</a></h2>
@@ -257,6 +282,192 @@ occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 <p>FILEs - what info is stored in file metadata about users </p>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="local-user-accounts-1"><a class="header" href="#local-user-accounts-1">Local User Accounts</a></h1>
+<p>These are accounts local to the host. </p>
+<p>Local account information are stored in two files. </p>
+<pre><code class="language-bash">/etc/passwd 
+</code></pre>
+<pre><code class="language-bash">/etc/shadow
+</code></pre>
+<p>Additionally group information is saved at the following location.</p>
+<pre><code class="language-bash">/etc/group
+</code></pre>
+<pre><code class="language-bash">/etc/gshadow
+</code></pre>
+<h2 id="etcpasswd-1"><a class="header" href="#etcpasswd-1">/etc/passwd <sup class="footnote-reference"><a href="#rhel_pswd">1</a></sup></a></h2>
+<p>The <code>/etc/passwd</code> file is a text file. Each line represents information about a single user account. This fields are seperated by a colon (<code>:</code>) symbol. There are seven fields saved in each row <sup class="footnote-reference"><a href="#nxcraft">2</a></sup>.</p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc ~]$ cat /etc/passwd | grep tlasso
+tlasso:x:1000:1001:tlasso:/home/tlasso:/bin/bash
+[tlasso@rhel-richmondfc ~]$
+</code></pre>
+<ol>
+<li><code>Username</code>: The user name of the user. </li>
+<li><code>Password</code>: An x character indicates that the password is in the <code>/etc/shadow</code> file. </li>
+<li><code>User ID (UID)</code>: A unique id assigned to the user</li>
+<li><code>Group ID (GID)</code>: The primary group ID. </li>
+<li><code>User ID Info</code>: Additional user information </li>
+<li><code>Home Directory</code>: Home directory of a user</li>
+<li><code>Command/shell</code>: Typically this is a shell. But if an account does not have interactive logon privileges then this can be set to <code>/sbin/nologin</code></li>
+</ol>
+<h2 id="etcshadow-3"><a class="header" href="#etcshadow-3">/etc/shadow <sup class="footnote-reference"><a href="#rhel_shdw">3</a></sup></a></h2>
+<p>The <code>/etc/shadow</code> file contains one entry per line for each user account on the system. Each entry consists of several fields separated by colons (<code>:</code>). The fields typically include the username, password hash, and various account-related information such as password expiration, account expiration, and account locking.</p>
+<p>The password hash stored in the <code>/etc/shadow</code> file is an encrypted version of the user's password. When a user attempts to log in, the system takes the password entered by the user, applies the same encryption algorithm, and compares the resulting hash with the one stored in the <code>/etc/shadow</code> file. If the hashes match, the user is granted access.</p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc ~]$ sudo cat /etc/shadow | grep tlasso
+tlasso:$6$jP1ap6xJUfvAgVjH$JxTdfXUOIqbpa3FpgALilTJvGnUfuUcDn8Qz.cxBf6yrFjo2332IHsCkHtg9QCHM7A4p9EcOZn.tXBWYK3RVO0::0:99999:7:::
+</code></pre>
+<ol>
+<li><code>Username</code>: The user name of the user.</li>
+<li><code>Password</code>: Encrypted password in hash format.</li>
+<li><code>Last password change date</code>: Data type is Long. 0 indicates that the user must change the password on next logon. Empty value inidcates that feature is disabled. A long value greater than 0 indicates the date of password change expressed in the form of days since Unix epoch. </li>
+</ol>
+<h2 id="etcgroup-4"><a class="header" href="#etcgroup-4">/etc/group <sup class="footnote-reference"><a href="#rhel_grp">4</a></sup></a></h2>
+<p>The <code>/etc/group</code> file contains a list of groups, one entry per line. Each line is colon delimited and contains four fields. </p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc ~]$ sudo cat /etc/group | grep tlasso
+wheel:x:10:tlasso
+coaching-staff:x:1000:tlasso
+</code></pre>
+<ol>
+<li><code>Group name</code>: Name of the group </li>
+<li><code>Group Password</code>: When this field is set to <code>x</code>, then a password is required to join the group. </li>
+<li><code>Group Id (GID)</code>: A numeric group id</li>
+<li><code>Member List</code>: The list of users that belong to the group. List is comma seperated. </li>
+</ol>
+<h2 id="etcgshadow-5"><a class="header" href="#etcgshadow-5">/etc/gshadow <sup class="footnote-reference"><a href="#rhel_grp_shdw">5</a></sup></a></h2>
+<p>The <code>/etc/gshadow</code> file contains the encrypted group password, group membership and administrator information. This file also contains information per group per line. It is colon delimeted and lists the members of the group in a comma seperated list </p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc ~]$ sudo cat /etc/gshadow | grep tlasso
+wheel:::tlasso
+coaching-staff:!::tlasso 
+</code></pre>
+<ol>
+<li><code>Group name</code> : Name of the group </li>
+<li><code>Encrypted password</code>: Group password</li>
+<li><code>Group administrators</code>: Comma delimited list of users. Add or remove from this list using <code>gpasswd</code> command. </li>
+<li><code>Group members</code> : Non-admin group members.</li>
+</ol>
+<h2 id="user-account-creation"><a class="header" href="#user-account-creation">User account creation</a></h2>
+<p>Please refer to RHEL<sup class="footnote-reference"><a href="#rhel_doc">6</a></sup> documentation for details and command references for user creation. </p>
+<div class="footnote-definition" id="rhel_doc"><sup class="footnote-definition-label">6</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools</p>
+</div>
+<div class="footnote-definition" id="nxcraft"><sup class="footnote-definition-label">2</sup>
+<p>https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/</p>
+</div>
+<div class="footnote-definition" id="rhel_pswd"><sup class="footnote-definition-label">1</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s2-acctsgrps-files#s3-acctsgrps-passwd</p>
+</div>
+<div class="footnote-definition" id="rhel_shdw"><sup class="footnote-definition-label">3</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-shadow</p>
+</div>
+<div class="footnote-definition" id="rhel_grp"><sup class="footnote-definition-label">4</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctspgrps-group</p>
+</div>
+<div class="footnote-definition" id="rhel_grp_shdw"><sup class="footnote-definition-label">5</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-gshadow</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="forensic-artifacts"><a class="header" href="#forensic-artifacts">Forensic Artifacts</a></h1>
+<p>There exists a number of utility programs that can generate the information listed below such as <code>wbinfo</code> and <code>getent</code>. Since we are interested in forensic evidence artifacts that can be collected and reviewed offline the focus here is to examine the file contents directly. This is also required when we are presented with a disk image of a system and not the live running system.</p>
+<h2 id="unexpected-local-user-accounts"><a class="header" href="#unexpected-local-user-accounts">Unexpected Local user accounts</a></h2>
+<p>Look for unusual user accounts in the <code>/etc/passwd</code> </p>
+<pre><code class="language-bash">#!/bin/bash
+NI_SHELLS=&quot;/sbin/nologin|/sbin/false|/sbin/true|/bin/sync|/sbin/shutdown|/sbin/halt&quot;
+
+echo &quot;Non Interactive / Service Accounts&quot;
+echo &quot;**********************************&quot;
+egrep $NI_SHELLS /etc/passwd | cut -d: -f1 
+
+echo &quot;&quot; 
+echo &quot;Interactive Users&quot;
+echo &quot;*****************&quot;
+egrep -v $NI_SHELLS /etc/passwd | cut -d: -f1
+
+echo &quot;&quot; 
+
+</code></pre>
+<h5 id="sample-output"><a class="header" href="#sample-output">Sample output</a></h5>
+<pre><code class="language-bash">
+[tlasso@rhel-richmondfc scripts]$ ./list_users.sh 
+Non Interactive / Service Accounts
+**********************************
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+operator
+games
+ftp
+nobody
+systemd-coredump
+dbus
+polkitd
+avahi
+tss
+colord
+clevis
+rtkit
+sssd
+geoclue
+libstoragemgmt
+systemd-oom
+setroubleshoot
+pipewire
+flatpak
+gdm
+cockpit-ws
+cockpit-wsinstance
+gnome-initial-setup
+sshd
+chrony
+dnsmasq
+tcpdump
+
+
+
+Interactive Users
+*****************
+root
+tlasso
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
+<h2 id="file-system"><a class="header" href="#file-system">File System</a></h2>
+<h3 id="using-lsblk"><a class="header" href="#using-lsblk">Using lsblk</a></h3>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ lsblk -f
+NAME          FSTYPE      FSVER    LABEL UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+sda                                                                                            
+├─sda1        vfat        FAT32          D7C9-A9C8                               591.8M     1% /boot/efi
+├─sda2        xfs                        f96af77c-de86-4f65-b914-33373c4313cf    730.5M    28% /boot
+└─sda3        LVM2_member LVM2 001       wZx9a7-JGa6-Za1A-3xtF-UXNZ-kPYx-w2gGVZ                
+  ├─rhel-root xfs                        51074d0b-8172-4bd0-aca8-1558aa348c34     29.3G    15% /
+  └─rhel-swap swap        1              7f8666f3-f284-4ee6-9bb2-91b3d8686a02                  [SWAP]
+sr0                  
+</code></pre>
+<p>We can determine the file system in use as xfs for rhel-root (<code>/</code>) mount.</p>
+<h3 id="from-fstab"><a class="header" href="#from-fstab">From fstab</a></h3>
+<p>fstab file contains the file system information. </p>
+<pre><code class="language-bash">cat /etc/fstab
+</code></pre>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Wed Jun 14 06:26:07 2023
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/rhel-root   /                       xfs     defaults        0 0
+UUID=f96af77c-de86-4f65-b914-33373c4313cf /boot                   xfs     defaults        0 0
+UUID=D7C9-A9C8          /boot/efi               vfat    umask=0077,shortname=winnt 0 2
+/dev/mapper/rhel-swap   none                    swap    defaults        0 0
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installed-applications"><a class="header" href="#installed-applications">Installed Applications</a></h1>
 
                     </main>
 
@@ -275,22 +486,6 @@ occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
