@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Incident Handling - Digital forensics &amp; Intrusion Response Playbook - *nix OS</title>
+        <title>Installed Applications - Digital forensics &amp; Intrusion Response Playbook - *nix OS</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html" class="active">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local_forensics.html"><strong aria-hidden="true">1.1.1.</strong> Forensic Artifacts</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local_forensics.html"><strong aria-hidden="true">1.1.1.</strong> Forensic Artifacts</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html" class="active"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,41 +144,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="incident-handling-steps"><a class="header" href="#incident-handling-steps">Incident Handling Steps</a></h1>
-<p>The incident response life cycle as defined by NIST Computer Security
-Incident Handling Guide<sup class="footnote-reference"><a href="#nist">1</a></sup> has the following 5 steps:</p>
-<ul>
-<li><strong>Preparation</strong> </li>
-<li><strong>Detection &amp; Analysis</strong></li>
-<li><strong>Containment, Eradication &amp; Recovery</strong></li>
-<li><strong>Post-Incident Activity</strong></li>
-</ul>
-<p>This playbook may be used to aid in the first two steps of the life cycle. </p>
-<h2 id="preparation-phase"><a class="header" href="#preparation-phase">Preparation Phase</a></h2>
-<p>The preparation phase calls for the establishment and training of an incident response team along with acquiring the necessary tools and resources to perform the response activities. 
-This playbook is designed as a training guide for analysts working with Linux OS. </p>
-<h2 id="detection--analysis"><a class="header" href="#detection--analysis">Detection &amp; Analysis</a></h2>
-<p>Signs of an incident fall into one of two categories: <em>precursors</em> and <em>indicators</em>. A precursor is a sign that an incident may occur in the future. An indicator is a sign that an incident may have occurred or may be
-occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
-<p>The playbook serves as a handbook and provides the sources for <em>indicators</em>. It details where to look for indicators, what conclusions can be drawn from the indicators as well as the data structure and organization of such artifacts. </p>
-<div class="footnote-definition" id="nist"><sup class="footnote-definition-label">1</sup>
-<p>https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf </p>
-</div>
-<div class="footnote-definition" id="SG"><sup class="footnote-definition-label">2</sup>
-<p>https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</p>
-</div>
+                        <h1 id="installed-applications"><a class="header" href="#installed-applications">Installed Applications</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="recommended_reading.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="os_accounts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -186,13 +161,10 @@ occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="recommended_reading.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="config.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="os_accounts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
