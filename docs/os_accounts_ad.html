@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Forensic Artifacts - Digital forensics &amp; Intrusion Response Playbook - *nix OS</title>
+        <title>Active Directory Accounts - Digital forensics &amp; Intrusion Response Playbook - *nix OS</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local_forensics.html" class="active"><strong aria-hidden="true">1.1.1.</strong> Forensic Artifacts</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_ad.html" class="active"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="persistence_autoruns.html"><strong aria-hidden="true">3.1.</strong> Autoruns</a></li><li class="chapter-item expanded "><a href="persistence_triggered_task.html"><strong aria-hidden="true">3.2.</strong> Triggered Tasks</a></li></ol></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,74 +144,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="forensic-artifacts"><a class="header" href="#forensic-artifacts">Forensic Artifacts</a></h1>
-<p>There exists a number of utility programs that can generate the information listed below such as <code>wbinfo</code> and <code>getent</code>. Since we are interested in forensic evidence artifacts that can be collected and reviewed offline the focus here is to examine the file contents directly. This is also required when we are presented with a disk image of a system and not the live running system.</p>
-<h2 id="unexpected-local-user-accounts"><a class="header" href="#unexpected-local-user-accounts">Unexpected Local user accounts</a></h2>
-<p>Look for unusual user accounts in the <code>/etc/passwd</code> </p>
-<pre><code class="language-bash">#!/bin/bash
-NI_SHELLS=&quot;/sbin/nologin|/sbin/false|/sbin/true|/bin/sync|/sbin/shutdown|/sbin/halt&quot;
-
-echo &quot;Non Interactive / Service Accounts&quot;
-echo &quot;**********************************&quot;
-egrep $NI_SHELLS /etc/passwd | cut -d: -f1 
-
-echo &quot;&quot; 
-echo &quot;Interactive Users&quot;
-echo &quot;*****************&quot;
-egrep -v $NI_SHELLS /etc/passwd | cut -d: -f1
-
-echo &quot;&quot; 
-
-</code></pre>
-<h5 id="sample-output"><a class="header" href="#sample-output">Sample output</a></h5>
-<pre><code class="language-bash">
-[tlasso@rhel-richmondfc scripts]$ ./list_users.sh 
-Non Interactive / Service Accounts
-**********************************
-bin
-daemon
-adm
-lp
-sync
-shutdown
-halt
-mail
-operator
-games
-ftp
-nobody
-systemd-coredump
-dbus
-polkitd
-avahi
-tss
-colord
-clevis
-rtkit
-sssd
-geoclue
-libstoragemgmt
-systemd-oom
-setroubleshoot
-pipewire
-flatpak
-gdm
-cockpit-ws
-cockpit-wsinstance
-gnome-initial-setup
-sshd
-chrony
-dnsmasq
-tcpdump
-
-
-
-Interactive Users
-*****************
-root
-tlasso
-
-</code></pre>
+                        <h1 id="active-directory-accounts"><a class="header" href="#active-directory-accounts">Active Directory Accounts</a></h1>
+<p>Active directory accounts are managed by the AD server. No local entries are manintained by the host regarding them. </p>
+<p>System Security Services Daemon <code>(SSSD)</code> is generally used by RHEL for AD based authentication. </p>
+<p>This is not limited to AD, the following combinations are supported. <sup class="footnote-reference"><a href="#rhel_sssd">1</a></sup></p>
+<div class="table-wrapper"><table><thead><tr><th>Identity Provider</th><th>Authentication Provider</th></tr></thead><tbody>
+<tr><td>Identity Management</td><td>Identity Management</td></tr>
+<tr><td>Active Directory</td><td>Active Directory</td></tr>
+<tr><td>LDAP</td><td>LDAP</td></tr>
+<tr><td>LDAP</td><td>Kerberos</td></tr>
+<tr><td>Proxy</td><td>Proxy</td></tr>
+<tr><td>Proxy</td><td>LDAP</td></tr>
+<tr><td>Proxy</td><td>Kerberos</td></tr>
+</tbody></table>
+</div>
+<p>SSSD does not create user accounts on the local system. However, SSSD can be configured to create home directories for IdM users. Once created, an IdM user home directory and its contents on the client are not deleted when the user logs out <sup class="footnote-reference"><a href="#rhel_sssd">1</a></sup>. </p>
+<p><img src="images/sssd_cache.png" alt="SSSD Works" /></p>
+<p>SSSD maintains a local cache about the users that attempted to logon to the local system. </p>
+<h3 id="uidgid-for-ad-users"><a class="header" href="#uidgid-for-ad-users">UID/GID for AD Users</a></h3>
+<p>Windows uses security ids (SID) and is incompatible with Linux UID/SID. SSSD autogenerates the UID and GID from the SIDs when the user logs on to a linux host for the first time. This information is cached as mentioned above. Note that the UID generated from a SID is always the same. </p>
+<p>ID mapping can be disabled. This should be used if AD defined POSIX attributes are to be used instead. </p>
+<div class="footnote-definition" id="rhel_sssd"><sup class="footnote-definition-label">1</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_authentication_and_authorization_in_rhel/understanding-sssd-and-its-benefits_configuring-authentication-and-authorization-in-rhel</p>
+</div>
 
                     </main>
 
@@ -221,7 +176,7 @@ tlasso
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="lateral_movement.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="os_accounts_forensics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -235,7 +190,7 @@ tlasso
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="lateral_movement.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="os_accounts_forensics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
