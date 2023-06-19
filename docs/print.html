@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local_forensics.html"><strong aria-hidden="true">1.1.1.</strong> Forensic Artifacts</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_ad.html"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="persistence_autoruns.html"><strong aria-hidden="true">3.1.</strong> Autoruns</a></li><li class="chapter-item expanded "><a href="persistence_triggered_task.html"><strong aria-hidden="true">3.2.</strong> Triggered Tasks</a></li></ol></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -229,25 +229,6 @@ occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 <p><strong>System account (Service account)</strong>: System accounts correspond to a service running on the system rather than to someone using the system. Service accounts are used by system services such as web servers, mail transport agents, databases etc. Note that there is no formal distinction between a regular user account vs. a system/service account at a system level. The key differences are that a regular user account has a login shell and wider privileges. </p>
 </li>
 </ul>
-<h2 id="local-user-accounts"><a class="header" href="#local-user-accounts">Local User Accounts</a></h2>
-<p>These are accounts local to the host. </p>
-<p>Points to write about </p>
-<ul>
-<li>Different ways to create a local user account </li>
-<li>Groups </li>
-<li>/etc/shadow ; /etc/passwd </li>
-<li>sample file </li>
-<li>default users </li>
-<li>real user </li>
-<li>user id - conventions </li>
-<li>structure of the files </li>
-<li>shell </li>
-<li>noshell / false </li>
-<li>home directory </li>
-<li>when is the home directory created </li>
-<li>System users don't have a home directory </li>
-<li></li>
-</ul>
 <h2 id="domain-user"><a class="header" href="#domain-user">Domain User</a></h2>
 <ul>
 <li>AD user </li>
@@ -282,7 +263,7 @@ occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 <p>FILEs - what info is stored in file metadata about users </p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="local-user-accounts-1"><a class="header" href="#local-user-accounts-1">Local User Accounts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="local-user-accounts"><a class="header" href="#local-user-accounts">Local User Accounts</a></h1>
 <p>These are accounts local to the host. </p>
 <p>Local account information are stored in two files. </p>
 <pre><code class="language-bash">/etc/passwd 
@@ -364,9 +345,32 @@ coaching-staff:!::tlasso
 <div class="footnote-definition" id="rhel_grp_shdw"><sup class="footnote-definition-label">5</sup>
 <p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-gshadow</p>
 </div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="active-directory-accounts"><a class="header" href="#active-directory-accounts">Active Directory Accounts</a></h1>
+<p>Active directory accounts are managed by the AD server. No local entries are manintained by the host regarding them. </p>
+<p>System Security Services Daemon <code>(SSSD)</code> is generally used by RHEL for AD based authentication. </p>
+<p>This is not limited to AD, the following combinations are supported. <sup class="footnote-reference"><a href="#rhel_sssd">1</a></sup></p>
+<div class="table-wrapper"><table><thead><tr><th>Identity Provider</th><th>Authentication Provider</th></tr></thead><tbody>
+<tr><td>Identity Management</td><td>Identity Management</td></tr>
+<tr><td>Active Directory</td><td>Active Directory</td></tr>
+<tr><td>LDAP</td><td>LDAP</td></tr>
+<tr><td>LDAP</td><td>Kerberos</td></tr>
+<tr><td>Proxy</td><td>Proxy</td></tr>
+<tr><td>Proxy</td><td>LDAP</td></tr>
+<tr><td>Proxy</td><td>Kerberos</td></tr>
+</tbody></table>
+</div>
+<p>SSSD does not create user accounts on the local system. However, SSSD can be configured to create home directories for IdM users. Once created, an IdM user home directory and its contents on the client are not deleted when the user logs out <sup class="footnote-reference"><a href="#rhel_sssd">1</a></sup>. </p>
+<p><img src="images/sssd_cache.png" alt="SSSD Works" /></p>
+<p>SSSD maintains a local cache about the users that attempted to logon to the local system. </p>
+<h3 id="uidgid-for-ad-users"><a class="header" href="#uidgid-for-ad-users">UID/GID for AD Users</a></h3>
+<p>Windows uses security ids (SID) and is incompatible with Linux UID/SID. SSSD autogenerates the UID and GID from the SIDs when the user logs on to a linux host for the first time. This information is cached as mentioned above. Note that the UID generated from a SID is always the same. </p>
+<p>ID mapping can be disabled. This should be used if AD defined POSIX attributes are to be used instead. </p>
+<div class="footnote-definition" id="rhel_sssd"><sup class="footnote-definition-label">1</sup>
+<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_authentication_and_authorization_in_rhel/understanding-sssd-and-its-benefits_configuring-authentication-and-authorization-in-rhel</p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="forensic-artifacts"><a class="header" href="#forensic-artifacts">Forensic Artifacts</a></h1>
 <p>There exists a number of utility programs that can generate the information listed below such as <code>wbinfo</code> and <code>getent</code>. Since we are interested in forensic evidence artifacts that can be collected and reviewed offline the focus here is to examine the file contents directly. This is also required when we are presented with a disk image of a system and not the live running system.</p>
-<h2 id="unexpected-local-user-accounts"><a class="header" href="#unexpected-local-user-accounts">Unexpected Local user accounts</a></h2>
+<h3 id="unexpected-local-user-accounts"><a class="header" href="#unexpected-local-user-accounts">Unexpected Local user accounts</a></h3>
 <p>Look for unusual user accounts in the <code>/etc/passwd</code> </p>
 <pre><code class="language-bash">#!/bin/bash
 NI_SHELLS=&quot;/sbin/nologin|/sbin/false|/sbin/true|/bin/sync|/sbin/shutdown|/sbin/halt&quot;
@@ -432,7 +436,192 @@ root
 tlasso
 
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
+<p>The <code>/etc/group</code>, <code>/etc/shadow</code>, <code>/etc/gshadow</code> must be cross referenced to check for any user ids or groups that are not recognized.<br />
+This can be sign of an orphaned user account that was not removed correctly. </p>
+<h3 id="account-earliest-activity--deleted-accounts"><a class="header" href="#account-earliest-activity--deleted-accounts">Account Earliest Activity &amp; Deleted Accounts</a></h3>
+<p>The user home directory is created for all interactive users (unless explicitly configured). </p>
+<p>Examine the <code>/home/</code> folder for a list of home directories. </p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc ~]$ sudo ls -al /home
+total 12
+drwxr-xr-x.  5 root      root        84 Jun 14 03:21 .
+dr-xr-xr-x. 18 root      root       235 Jun 14 02:26 ..
+drwx------. 14 357201109 357200513 4096 Jun 14 03:23 nate@corp.tuxtriage.net
+drwx------. 15 tlasso    tlasso    4096 Jun 18 19:25 tlasso
+drwx------. 14 357201108 357200513 4096 Jun 14 03:14 tlasso@corp.tuxtriage.net
+</code></pre>
+<p>Note that in the above example there are two tlasso users. The <code>tlasso</code> user is a local system user while the <code>tlasso@corp.tuxtriage.net</code> is an AD user. </p>
+<p>Since one of the first things the system does when a user is created is the creation of the home directory, this information can be approximated to the earliest presense of this user on the host. </p>
+<p>If the investigation timelines are outside the earliest activity date, the user account may not be part of the incident. </p>
+<p>The <code>Birth time</code> of the folder can be used for this purpose. </p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc ~]$ stat /home/*
+  File: /home/nate@corp.tuxtriage.net
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: fd00h/64768d	Inode: 102693422   Links: 14
+Access: (0700/drwx------)  Uid: (357201109/ UNKNOWN)   Gid: (357200513/ UNKNOWN)
+Context: unconfined_u:object_r:user_home_dir_t:s0
+Access: 2023-06-14 03:21:01.790738178 -0400
+Modify: 2023-06-14 03:23:10.091326083 -0400
+Change: 2023-06-14 03:23:10.091326083 -0400
+ Birth: 2023-06-14 03:21:01.790738178 -0400
+  File: /home/tlasso
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: fd00h/64768d	Inode: 69333680    Links: 15
+Access: (0700/drwx------)  Uid: ( 1000/  tlasso)   Gid: ( 1001/  tlasso)
+Context: unconfined_u:object_r:user_home_dir_t:s0
+Access: 2023-06-18 19:32:30.473261644 -0400
+Modify: 2023-06-18 19:25:15.008942407 -0400
+Change: 2023-06-18 19:25:15.008942407 -0400
+ Birth: 2023-06-14 02:30:33.307059622 -0400
+  File: /home/tlasso@corp.tuxtriage.net
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: fd00h/64768d	Inode: 101569584   Links: 14
+Access: (0700/drwx------)  Uid: (357201108/ UNKNOWN)   Gid: (357200513/ UNKNOWN)
+Context: unconfined_u:object_r:user_home_dir_t:s0
+Access: 2023-06-14 03:11:59.697315839 -0400
+Modify: 2023-06-14 03:14:12.457619105 -0400
+Change: 2023-06-14 03:14:12.457619105 -0400
+ Birth: 2023-06-14 03:11:59.697315839 -0400
+</code></pre>
+<h3 id="sssd-cache"><a class="header" href="#sssd-cache">SSSD Cache</a></h3>
+<p>Any user that logs on via AD does not leave much trace on the system maintained files such as <code>/etc/passwd</code> etc. However, there are cache files that are updated as part of the logon process that can be analyzed to detect malicious user activity. </p>
+<p>SSSD cache is located at <code>/var/lib/sss/db</code>. </p>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ sudo ls /var/lib/sss/db
+cache_corp.tuxtriage.net.ldb  ccache_CORP.TUXTRIAGE.NET  config.ldb  sssd.ldb  timestamps_corp.tuxtriage.net.ldb
+</code></pre>
+<p>Of interest to us is the <code>cache_corp.tuxtriage.net.ldb</code> ldb database. See details about lbd format here <sup class="footnote-reference"><a href="#ldb">1</a></sup>.</p>
+<p><code>ldbsearch</code> command can be used to search this database for records of interest. </p>
+<pre><code class="language-bash">tlasso@rhel-richmondfc scripts]$ sudo ldbsearch -H /var/lib/sss/db/cache_corp.tuxtriage.net.ldb
+asq: Unable to register control with rootdse!
+# record 1
+dn: gpoGUID={31B2F340-016D-11D2-945F-00C04FB984F9},cn=gpos,cn=ad,cn=custom,cn=corp.tuxtriage.net,cn=sysdb
+gpoGUID: {31B2F340-016D-11D2-945F-00C04FB984F9}
+gpoVersion: 3
+objectClass: gpo
+gpoPolicyFileTimeout: 1686727266
+distinguishedName: gpoGUID={31B2F340-016D-11D2-945F-00C04FB984F9},cn=gpos,cn=a
+ d,cn=custom,cn=corp.tuxtriage.net,cn=sysdb
+...
+
+# record 3
+dn: name=tlasso@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.net,cn=sysdb
+createTimestamp: 1686726711
+fullName: Ted Lasso
+gecos: Ted Lasso
+gidNumber: 357200513
+name: tlasso@corp.tuxtriage.net
+objectCategory: user
+uidNumber: 357201108
+objectSIDString: S-1-5-21-2369507818-3716282536-1365522936-1108
+uniqueID: 5e499899-1305-460b-82d9-87a949f32d18
+originalDN: CN=Ted Lasso,CN=Users,DC=corp,DC=tuxtriage,DC=net
+originalModifyTimestamp: 20230614062722.0Z
+entryUSN: 41335
+userPrincipalName: tlasso@CORP.TUXTRIAGE.NET
+adAccountExpires: 9223372036854775807
+adUserAccountControl: 512
+nameAlias: tlasso@corp.tuxtriage.net
+isPosix: TRUE
+lastUpdate: 1686726711
+dataExpireTimestamp: 1686732111
+initgrExpireTimestamp: 0
+ccacheFile: KCM:
+cachedPasswordType: 1
+failedLoginAttempts: 0
+memberof: name=Domain Users@corp.tuxtriage.net,cn=groups,cn=corp.tuxtriage.net
+ ,cn=sysdb
+pacBlob:: BwAAAAAAAAABAAAA2AEAAHgAAAAAAAAABgAAABAAAABQAgAAAAAAAAcAAAAQAAAAYAIA
+ AAAAAAAKAAAAFgAAAHACAAAAAAAADAAAAKgAAACIAgAAAAAAABAAAAAQAAAAMAMAAAAAAAATAAAAE
+ AAAAEADAAAAAAAAARAIAMzMzMzIAQAAAAAAAAAAAgCpHPiCj57ZAf////////9//////////38lSO
+ 9GiZ7ZASUIWXFSn9kBJchIPIq/2QEMAAwABAACABIAEgAIAAIAAAAAAAwAAgAAAAAAEAACAAAAAAA
+ UAAIAAAAAABgAAgABAAAAVAQAAAECAAABAAAAHAACACAAAAAAAAAAAAAAAAAAAAAAAAAAHgAgACAA
+ AgAIAAoAJAACACgAAgAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA
+ CwAAgAAAAAAAAAAAAAAAAAGAAAAAAAAAAYAAAB0AGwAYQBzAHMAbwAJAAAAAAAAAAkAAABUAGUAZA
+ AgAEwAYQBzAHMAbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ AAAAAAAEAAAABAgAABwAAABAAAAAAAAAADwAAAFcASQBOAC0AVABVAEUAMQBWADIATQBKAEYANQBS
+ AAAABQAAAAAAAAAEAAAAQwBPAFIAUAAEAAAAAQQAAAAAAAUVAAAA6tE7jaj4gd34OWRRAQAAADAAA
+ gAHAAAAAQAAAAEBAAAAAAASAQAAABAAAABi2JyYFqoO2sq6CcwQAAAACawZ0ByD2C8dtvh8gE5Eq5
+ Ce2QEMAHQAbABhAHMAcwBvAAAAMgAYACQAUAACAAAADAB4ABwAiAAAAAAAdABsAGEAcwBzAG8AQAB
+ jAG8AcgBwAC4AdAB1AHgAdAByAGkAYQBnAGUALgBuAGUAdAAAAAAAAABDAE8AUgBQAC4AVABVAFgA
+ VABSAEkAQQBHAEUALgBOAEUAVAAAAAAAdABsAGEAcwBzAG8AAAAAAAEFAAAAAAAFFQAAAOrRO42o+
+ IHd+DlkUVQEAAAAAAAAEAAAAAElgqwi0pz73PmFIhAAAADlOc348iFviKxpfwI=
+pacBlobExpireTimestamp: 1686727516
+cachedPassword: $6$TuYfJdJ.n2nhNpsA$e8b8IGjnqoNmQCrWlit/Ucn7M2Iie2jq3DwOHEXTIz
+ FzY17zamTuy3loYoH/w5DVYqS7t8lM8v6Be2ijrMmLa0
+lastCachedPasswordChange: 1686727216
+lastOnlineAuth: 1686727216
+lastOnlineAuthWithCurrentToken: 1686727216
+lastLogin: 1686727216
+distinguishedName: name=tlasso@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.n
+ et,cn=sysdb
+... 
+# record 8
+dn: name=nate@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.net,cn=sysdb
+createTimestamp: 1686727258
+fullName: Nathan Shelley
+gecos: Nathan Shelley
+gidNumber: 357200513
+name: nate@corp.tuxtriage.net
+objectCategory: user
+uidNumber: 357201109
+objectSIDString: S-1-5-21-2369507818-3716282536-1365522936-1109
+uniqueID: a4d7ff67-c14f-4568-b803-b1344d456af8
+originalDN: CN=Nathan Shelley,CN=Users,DC=corp,DC=tuxtriage,DC=net
+originalModifyTimestamp: 20230614062944.0Z
+entryUSN: 41342
+userPrincipalName: nate@CORP.TUXTRIAGE.NET
+adAccountExpires: 9223372036854775807
+adUserAccountControl: 512
+nameAlias: nate@corp.tuxtriage.net
+isPosix: TRUE
+lastUpdate: 1686727258
+dataExpireTimestamp: 1686732658
+initgrExpireTimestamp: 0
+memberof: name=Domain Users@corp.tuxtriage.net,cn=groups,cn=corp.tuxtriage.net
+ ,cn=sysdb
+pacBlob:: BwAAAAAAAAABAAAA4AEAAHgAAAAAAAAABgAAABAAAABYAgAAAAAAAAcAAAAQAAAAaAIA
+ AAAAAAAKAAAAEgAAAHgCAAAAAAAADAAAAJgAAACQAgAAAAAAABAAAAAQAAAAKAMAAAAAAAATAAAAE
+ AAAADgDAAAAAAAAARAIAMzMzMzQAQAAAAAAAAAAAgAAAAAAAAAAAP////////9//////////38tnc
+ mbiZ7ZAS1dM8ZSn9kBLR0jkYq/2QEIAAgABAACABwAHAAIAAIAAAAAAAwAAgAAAAAAEAACAAAAAAA
+ UAAIAAAAAABgAAgAAAAAAVQQAAAECAAABAAAAHAACACAAAAAAAAAAAAAAAAAAAAAAAAAAHgAgACAA
+ AgAIAAoAJAACACgAAgAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA
+ CwAAgAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAABuAGEAdABlAA4AAAAAAAAADgAAAE4AYQB0AGgAYQ
+ BuACAAUwBoAGUAbABsAGUAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ AAAAAAAAAAAABAAAAAQIAAAcAAAAQAAAAAAAAAA8AAABXAEkATgAtAFQAVQBFADEAVgAyAE0ASgBG
+ ADUAUgAAAAUAAAAAAAAABAAAAEMATwBSAFAABAAAAAEEAAAAAAAFFQAAAOrRO42o+IHd+DlkUQEAA
+ AAwAAIABwAAAAEAAAABAQAAAAAAEgEAAAAAAAAAEAAAANNBR2M9XYa9xX8pNxAAAACF+5OW95HsbT
+ 4mEPAAwxbGkJ7ZAQgAbgBhAHQAZQAAAAAAAAAuABgAJABIAAIAAAAIAHAAHAB4AAAAAABuAGEAdAB
+ lAEAAYwBvAHIAcAAuAHQAdQB4AHQAcgBpAGEAZwBlAC4AbgBlAHQAAABDAE8AUgBQAC4AVABVAFgA
+ VABSAEkAQQBHAEUALgBOAEUAVAAAAAAAbgBhAHQAZQABBQAAAAAABRUAAADq0TuNqPiB3fg5ZFFVB
+ AAAAAAAABAAAAAiqzSyLHV5O4/3XFsQAAAAMpv8w439cfo71DnY
+pacBlobExpireTimestamp: 1686727561
+ccacheFile: KCM:
+cachedPassword: $6$.9jD7fiamZSK.KjF$IPjQgS76hMIMOjZ2K6/j3HFC7hies1Ezyiuur85cMU
+ ZjKSntkCgNcxydyL86uqhpRJk9k7fTfMnkkqcs9xEKb/
+cachedPasswordType: 1
+lastCachedPasswordChange: 1686727261
+failedLoginAttempts: 0
+lastOnlineAuth: 1686727261
+lastOnlineAuthWithCurrentToken: 1686727261
+lastLogin: 1686727261
+distinguishedName: name=nate@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.net
+ ,cn=sysdb
+...
+
+# returned 14 records
+# 14 entries
+# 0 referrals
+</code></pre>
+<p>From the above results, we can locate domain users that have logged on by searching for entries with <code>pacBlob</code> value set. Once the records have been located, various attributes about the user activity can be determined. </p>
+<p><code>User Name</code>: This can be located at <code>name</code> as well as <code>nameAlias</code> 
+<code>objectSIDString</code>: The windows SID for this user. This is useful to locate activity of this user across other windows systems. 
+<code>createTimestamp</code>: The create time for this user 
+<code>lastLogin</code>: Last logon timestamp for the user. </p>
+<div class="footnote-definition" id="ldb"><sup class="footnote-definition-label">1</sup>
+<p>https://linux.die.net/man/3/ldb </p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="autoruns"><a class="header" href="#autoruns">Autoruns</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="triggered-tasks"><a class="header" href="#triggered-tasks">Triggered Tasks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
 <h2 id="file-system"><a class="header" href="#file-system">File System</a></h2>
 <h3 id="using-lsblk"><a class="header" href="#using-lsblk">Using lsblk</a></h3>
 <pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ lsblk -f
