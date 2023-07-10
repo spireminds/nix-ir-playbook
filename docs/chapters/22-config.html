@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>System - Digital forensics &amp; Intrusion Response Playbook - *nix OS</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../chapters/01-README.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../chapters/02-recommended_reading.html">Recommended Reading</a></li><li class="chapter-item expanded affix "><a href="../chapters/03-incident_handling.html">Incident Handling</a></li><li class="chapter-item expanded "><a href="../chapters/04-os_accounts.html"><strong aria-hidden="true">1.</strong> User Accounts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapters/05-os_accounts_local.html"><strong aria-hidden="true">1.1.</strong> Local User Accounts</a></li><li class="chapter-item expanded "><a href="../chapters/06-os_accounts_ad.html"><strong aria-hidden="true">1.2.</strong> Active Directory Accounts</a></li><li class="chapter-item expanded "><a href="../chapters/07-os_accounts_forensics.html"><strong aria-hidden="true">1.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="../chapters/08-01-lateral_movement.html"><strong aria-hidden="true">2.</strong> Lateral Movement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapters/08-02-lateral_forensics.html"><strong aria-hidden="true">2.1.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="../chapters/09-persistence.html"><strong aria-hidden="true">3.</strong> Persistence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapters/10-1-persistence_cron.html"><strong aria-hidden="true">3.1.</strong> Cron Jobs</a></li><li class="chapter-item expanded "><a href="../chapters/10-2-autostart.html"><strong aria-hidden="true">3.2.</strong> Autostart</a></li><li class="chapter-item expanded "><a href="../chapters/13-persistence_forensics.html"><strong aria-hidden="true">3.3.</strong> Forensic Artifacts</a></li></ol></li><li class="chapter-item expanded "><a href="../chapters/14-execution.html"><strong aria-hidden="true">4.</strong> Execution</a></li><li class="chapter-item expanded "><a href="../chapters/16-webhistory.html"><strong aria-hidden="true">5.</strong> Web Artifacts</a></li><li class="chapter-item expanded "><a href="../chapters/17-open_ports_active_conn.html"><strong aria-hidden="true">6.</strong> Open Ports / Active Connections</a></li><li class="chapter-item expanded "><a href="../chapters/19-dns_cache.html"><strong aria-hidden="true">7.</strong> DNS Cache records</a></li><li class="chapter-item expanded "><a href="../chapters/21-01-log_analysis.html"><strong aria-hidden="true">8.</strong> Log Analysis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapters/21-02-audit_log.html"><strong aria-hidden="true">8.1.</strong> Audit log</a></li><li class="chapter-item expanded "><a href="../chapters/21-03-system_messages_log.html"><strong aria-hidden="true">8.2.</strong> System log</a></li><li class="chapter-item expanded "><a href="../chapters/21-04-security_log.html"><strong aria-hidden="true">8.3.</strong> Security log</a></li><li class="chapter-item expanded "><a href="../chapters/21-03-logon_attempts.html"><strong aria-hidden="true">8.4.</strong> Logon attempts</a></li><li class="chapter-item expanded "><a href="../chapters/21-04-scheduled_task_exe.html"><strong aria-hidden="true">8.5.</strong> Scheduled task execution</a></li><li class="chapter-item expanded "><a href="../chapters/21-05-installed_apps.html"><strong aria-hidden="true">8.6.</strong> Installed applications</a></li></ol></li><li class="chapter-item expanded "><a href="../chapters/22-config.html" class="active"><strong aria-hidden="true">9.</strong> System</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../chapters/25-about.html">About</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Digital forensics &amp; Intrusion Response Playbook - *nix OS</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="system-configuration"><a class="header" href="#system-configuration">System Configuration</a></h1>
+<h1 id="basic-system-information"><a class="header" href="#basic-system-information">Basic System Information</a></h1>
+<h2 id="linux-version-information"><a class="header" href="#linux-version-information">Linux Version information</a></h2>
+<pre><code class="language-bash">  cat /proc/version
+</code></pre>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc proc]$ cat /proc/version
+Linux version 5.14.0-284.18.1.el9_2.x86_64 (mockbuild@x86-64-02.build.eng.rdu2.redhat.com) (gcc (GCC) 11.3.1 20221121 (Red Hat 11.3.1-4), GNU ld version 2.35.2-37.el9) #1 SMP PREEMPT_DYNAMIC Wed May 31 10:39:18 EDT 2023
+</code></pre>
+<h2 id="os-release-information-from-etcos-release-file"><a class="header" href="#os-release-information-from-etcos-release-file">Os Release information from <code>/etc/os-release</code> file</a></h2>
+<pre><code class="language-bash"> cat /etc/os-release
+</code></pre>
+<pre><code class="language-bash">tlasso@rhel-richmondfc Documents]$ cat /etc/os-release 
+NAME=&quot;Red Hat Enterprise Linux&quot;
+VERSION=&quot;9.2 (Plow)&quot;
+ID=&quot;rhel&quot;
+ID_LIKE=&quot;fedora&quot;
+VERSION_ID=&quot;9.2&quot;
+PLATFORM_ID=&quot;platform:el9&quot;
+PRETTY_NAME=&quot;Red Hat Enterprise Linux 9.2 (Plow)&quot;
+ANSI_COLOR=&quot;0;31&quot;
+LOGO=&quot;fedora-logo-icon&quot;
+CPE_NAME=&quot;cpe:/o:redhat:enterprise_linux:9::baseos&quot;
+HOME_URL=&quot;https://www.redhat.com/&quot;
+DOCUMENTATION_URL=&quot;https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9&quot;
+BUG_REPORT_URL=&quot;https://bugzilla.redhat.com/&quot;
+
+REDHAT_BUGZILLA_PRODUCT=&quot;Red Hat Enterprise Linux 9&quot;
+REDHAT_BUGZILLA_PRODUCT_VERSION=9.2
+REDHAT_SUPPORT_PRODUCT=&quot;Red Hat Enterprise Linux&quot;
+REDHAT_SUPPORT_PRODUCT_VERSION=&quot;9.2&quot;
+</code></pre>
+<h2 id="installation-date"><a class="header" href="#installation-date">Installation date</a></h2>
+<pre><code class="language-bash">$ rpm -qi basesystem 
+</code></pre>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc Documents]$ rpm -qi basesystem 
+Name        : basesystem
+Version     : 11
+Release     : 13.el9
+Architecture: noarch
+Install Date: Wed 14 Jun 2023 02:26:33 AM EDT
+Group       : Unspecified
+Size        : 0
+License     : Public Domain
+Signature   : RSA/SHA256, Sat 20 Nov 2021 05:50:43 AM EST, Key ID 199e2f91fd431d51
+Source RPM  : basesystem-11-13.el9.src.rpm
+Build Date  : Mon 09 Aug 2021 03:47:02 PM EDT
+Build Host  : x86-vm-55.build.eng.bos.redhat.com
+Packager    : Red Hat, Inc. &lt;http://bugzilla.redhat.com/bugzilla&gt;
+Vendor      : Red Hat, Inc.
+Summary     : The skeleton package which defines a simple Red Hat Enterprise Linux system
+</code></pre>
+<h1 id="file-system"><a class="header" href="#file-system">File System</a></h1>
+<h3 id="using-lsblk"><a class="header" href="#using-lsblk">Using lsblk</a></h3>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ lsblk -f
+NAME          FSTYPE      FSVER    LABEL UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+sda                                                                                            
+├─sda1        vfat        FAT32          D7C9-A9C8                               591.8M     1% /boot/efi
+├─sda2        xfs                        f96af77c-de86-4f65-b914-33373c4313cf    730.5M    28% /boot
+└─sda3        LVM2_member LVM2 001       wZx9a7-JGa6-Za1A-3xtF-UXNZ-kPYx-w2gGVZ                
+  ├─rhel-root xfs                        51074d0b-8172-4bd0-aca8-1558aa348c34     29.3G    15% /
+  └─rhel-swap swap        1              7f8666f3-f284-4ee6-9bb2-91b3d8686a02                  [SWAP]
+sr0                  
+</code></pre>
+<p>We can determine the file system in use as xfs for rhel-root (<code>/</code>) mount.</p>
+<h3 id="from-fstab"><a class="header" href="#from-fstab">From fstab</a></h3>
+<p>fstab file contains the file system information. </p>
+<pre><code class="language-bash">cat /etc/fstab
+</code></pre>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc scripts]$ cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Wed Jun 14 06:26:07 2023
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/rhel-root   /                       xfs     defaults        0 0
+UUID=f96af77c-de86-4f65-b914-33373c4313cf /boot                   xfs     defaults        0 0
+UUID=D7C9-A9C8          /boot/efi               vfat    umask=0077,shortname=winnt 0 2
+/dev/mapper/rhel-swap   none                    swap    defaults        0 0
+</code></pre>
+<h2 id="mounts"><a class="header" href="#mounts">Mounts</a></h2>
+<pre><code class="language-bash">cat /proc/mounts
+</code></pre>
+<pre><code class="language-bash">[tlasso@rhel-richmondfc proc]$ cat /proc/mounts
+proc /proc proc rw,nosuid,nodev,noexec,relatime 0 0
+sysfs /sys sysfs rw,seclabel,nosuid,nodev,noexec,relatime 0 0
+devtmpfs /dev devtmpfs rw,seclabel,nosuid,size=4096k,nr_inodes=1958404,mode=755,inode64 0 0
+securityfs /sys/kernel/security securityfs rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /dev/shm tmpfs rw,seclabel,nosuid,nodev,size=7864436k,nr_inodes=1966109,inode64 0 0
+devpts /dev/pts devpts rw,seclabel,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 0 0
+tmpfs /run tmpfs rw,seclabel,nosuid,nodev,size=3145776k,nr_inodes=819200,mode=755,inode64 0 0
+cgroup2 /sys/fs/cgroup cgroup2 rw,seclabel,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot 0 0
+pstore /sys/fs/pstore pstore rw,seclabel,nosuid,nodev,noexec,relatime 0 0
+efivarfs /sys/firmware/efi/efivars efivarfs rw,nosuid,nodev,noexec,relatime 0 0
+bpf /sys/fs/bpf bpf rw,nosuid,nodev,noexec,relatime,mode=700 0 0
+/dev/mapper/rhel-root / xfs rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota 0 0
+selinuxfs /sys/fs/selinux selinuxfs rw,nosuid,noexec,relatime 0 0
+</code></pre>
+<h2 id="system-audit-configuration-and-audit-rules-1"><a class="header" href="#system-audit-configuration-and-audit-rules-1">System Audit configuration and Audit rules <sup class="footnote-reference"><a href="#audit">1</a></sup></a></h2>
+<h3 id="auditdconf"><a class="header" href="#auditdconf">auditd.conf</a></h3>
+<p>The <code>/etc/audit/auditd.conf</code> file is the main configuration file for the Linux Audit daemon (auditd). It is responsible for controlling the behavior of the audit system, allowing administrators to specify various parameters, such as how to log events, where to store log files, how much disk space to use, and when to take certain actions in response to specific system events. </p>
+<h3 id="auditrules"><a class="header" href="#auditrules">audit.rules</a></h3>
+<p>The default audit configuration file is located at <code>/etc/audit/auditd.conf</code>. </p>
+<div class="footnote-definition" id="audit"><sup class="footnote-definition-label">1</sup>
+<p>https://www.redhat.com/sysadmin/configure-linux-auditing-auditd </p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapters/21-05-installed_apps.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../chapters/25-about.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapters/21-05-installed_apps.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../chapters/25-about.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
