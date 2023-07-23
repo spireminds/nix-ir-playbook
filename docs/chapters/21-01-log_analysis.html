@@ -88,11 +88,33 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -177,9 +199,13 @@
 <p>RHEL9 defaults to using rsyslog for log management. rsyslog configuration is maintained in the <code>/etc/rsyslog.conf</code> file. Please review the rsyslog documentation to learn its capabilities<sup class="footnote-reference"><a href="#rsyslog">1</a></sup> <sup class="footnote-reference"><a href="#rhel_rsyslog">2</a></sup> <sup class="footnote-reference"><a href="#rhel_rsyslog2">3</a></sup>. Note that the above log files may be altered by changing the log settings in the conf file. 
 Ensure that the configurations has not been tampered with by comparing it with corporate baselines or policies. </p>
 <div class="footnote-definition" id="rsyslog"><sup class="footnote-definition-label">1</sup>
-<p><a href="https://www.rsyslog.com/doc/v8-stable/configuration/index.html">https://www.rsyslog.com/doc/v8-stable/configuration/index.html</a> 
-<sup class="footnote-reference"><a href="#rhel_rsyslog">2</a></sup>: <a href="https://www.redhat.com/sysadmin/log-aggregation-rsyslog">https://www.redhat.com/sysadmin/log-aggregation-rsyslog</a>
-<sup class="footnote-reference"><a href="#rhel_rsyslog2">3</a></sup>: <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/security_hardening/assembly_configuring-a-remote-logging-solution_security-hardening#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/security_hardening/assembly_configuring-a-remote-logging-solution_security-hardening#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution</a></p>
+<p><a href="https://www.rsyslog.com/doc/v8-stable/configuration/index.html">https://www.rsyslog.com/doc/v8-stable/configuration/index.html</a> </p>
+</div>
+<div class="footnote-definition" id="rhel_rsyslog"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://www.redhat.com/sysadmin/log-aggregation-rsyslog">https://www.redhat.com/sysadmin/log-aggregation-rsyslog</a></p>
+</div>
+<div class="footnote-definition" id="rhel_rsyslog2"><sup class="footnote-definition-label">3</sup>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/security_hardening/assembly_configuring-a-remote-logging-solution_security-hardening#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/security_hardening/assembly_configuring-a-remote-logging-solution_security-hardening#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution</a></p>
 </div>
 
                     </main>

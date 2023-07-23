@@ -88,11 +88,33 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -161,11 +183,6 @@ This playbook is designed as a training guide for analysts working with Linux OS
 <p>Signs of an incident fall into one of two categories: <em>precursors</em> and <em>indicators</em>. A precursor is a sign that an incident may occur in the future. An indicator is a sign that an incident may have occurred or may be
 occurring now <sup class="footnote-reference"><a href="#nist">1</a></sup>.</p>
 <p>The playbook serves as a handbook and provides the sources for <em>indicators</em>. It details where to look for indicators, what conclusions can be drawn from the indicators as well as the data structure and organization of such artifacts. </p>
-<h2 id="todo"><a class="header" href="#todo">TODO</a></h2>
-<ul>
-<li>Add the incident response process picture </li>
-<li>Explain the process in detail </li>
-</ul>
 
                     </main>
 

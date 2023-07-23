@@ -88,11 +88,33 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -145,8 +167,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="lateral-movement"><a class="header" href="#lateral-movement">Lateral movement</a></h1>
-<p>Lateral movement refers to the techniques used by attackers to move around the network once they have gained initial access. The attacker may or may not have fully compromized the host with privilige esclation attacks before lateral movement. </p>
-<p>SSH lateral movement is typical for linux systems and an easy technique for attackers to exploit. Another attack technique is to use of SSH tunnels to create secure connections between systems and move data between systems without being detected.</p>
+<p>Lateral movement refers to the techniques attackers use to move around the network once they have gained initial access. The attacker may or may not have fully compromised the host with privilege escalation attacks before lateral movement.</p>
+<p>SSH lateral movement is typical for Linux systems and an easy technique for attackers to exploit. Another attack technique is using SSH tunnels to create secure connections between systems and move data between systems without being detected.</p>
 <p>It is important to note that there is no single way to detect SSH lateral movement.</p>
 <h2 id="ssh-logs"><a class="header" href="#ssh-logs">SSH Logs</a></h2>
 <p>The <code>sshd</code> logs are written to the <code>/var/log/secure</code> file. See more details about the <code>secure</code> log file in the Log Analysis section. </p>
